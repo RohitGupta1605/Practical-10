@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 10</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.header
+{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(40, 27, 97);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+.header img{
+    width: 70px;
+    height: 70px;
+}
+.header h1{
+    color: white;
+    text-transform: uppercase;
+}
+.sidebar
+{
+    width: 20%;
+    height: 100%;
+    background-color:rgb(40, 27, 97);
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    border: 2px solid black;
+}
+.sidebar ul{
+    list-style: none;
+}
+.sidebar ul li{
+    border-bottom: 5px solid white;
+}
+.sidebar ul li a
+{
+    display: block;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    /* margin: 10px; */
+    padding: 10px;
+}
+.sidebar ul li a:hover
+{
+    border: 5px solid white;
+    background-color: rgb(228, 92, 92);
+    transition: .8s;
+    color: white;
+}
+a i
+{
+    margin-right: 20px;
+}
+#check
+{
+    display: none;
+}
+.showbutton,.hidebutton
+{
+    font-size: 35px;
+    color: white;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+
+}
+.hidebutton
+{
+    display: none;
+}
+#check:checked~.sidebar
+{
+    left: 0%;
+}
+#check:checked~.showbutton
+{
+    display: none;
+}
+#check:checked~.content{
+    width: 80%;
+    float: right;
+    margin-left: 30px;
+    padding: 20px;
+}
+#check:checked~.hidebutton
+{
+    display: block;
+}
+.content
+{
+    margin-top: 80px;
+    margin-left: 20px;
+}
+.content p{
+    text-align: justify;
+}
+.content img{
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom:10px;
+
+}
+.social
+{
+  
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: solid 3px rgba(255, 255, 255, 0.1);
+    border-bottom: solid 3px rgba(255, 255, 255, 0.1);
+    padding: 5px 0px;
+    position: fixed;
+    bottom: 0px;
+}
+.social a
+{
+    color: white;
+    font-size: 30px;
+}
+
+.social a i:hover
+{
+    color: rgb(235, 107, 107);
+    transition: .6s;
+    font-size: 35px;
+    border: 5px solid white;
+    padding: 10px;
+}
+@media(max-width:700px)
+{
+    #check:checked~.sidebar
+    {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .social
+    {
+        display: none;
+    }
+    .header h1
+    {
+        display: none;
+    }
+}
+@media(max-width:450px)
+{
+    #check:checked~.sidebar
+    {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .social
+    {
+        display: none;
+    }
+    .header h1
+    {
+        display: none;
+    }
+    #check:checked~.sidebar ul li a i
+    {
+        display: none;
+    }
+}</style>
+</head>
+<body>
+    <div class="header">
+<img src="download.png" alt="">
+<h1>FullStack</h1>
+    </div>
+    <input type="checkbox" name="" id="check">
+    <label for="check"class="showbutton">
+        <i class="fa fa-bars"></i>
+    </label>
+    <label for="check"class="hidebutton">
+        <i class="fa fa-times"></i>
+    </label>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-user"></i>About</a></li>
+            <li><a href="#"><i class="fa fa-server"></i>Services</a></li>
+            <li><a href="#"><i class="fa fa-rss"></i>Blog</a></li>
+            <li><a href="#"><i class="fa fa-id-card"></i>Contact</a></li>
+        </ul>
+        <div class="social">
+        <a href=""><i class="fa fa-facebook-square"></i></a>
+        <a href=""><i class="fa fa-github"></i></a>
+        <a href=""><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <img src="../images/banner.jpg" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sint cum ipsam assumenda blanditiis aliquam natus magnam voluptates placeat, cumque impedit quae officia nesciunt nisi incidunt eaque id illum dolore temporibus unde, culpa quam fugit? Est nobis quam maiores odit consectetur quae amet saepe dolore sequi fugit distinctio quo, ipsam doloremque ducimus incidunt labore similique soluta asperiores. Placeat quam, consequuntur eveniet enim, accusantium modi minima fuga nesciunt nostrum quod distinctio tenetur maiores nobis, rerum doloribus facere. Repellendus accusantium nam ullam vero rerum id consequuntur similique dolore. Fugiat sunt ut itaque, nobis ullam possimus quisquam optio aliquam ex. Totam maiores vel minus reprehenderit eum. Error vel possimus quidem fugiat alias. Nesciunt explicabo dicta officiis minima animi iure sapiente dolores ipsum ab laboriosam expedita omnis corrupti, quia magni voluptates maxime reiciendis? Ullam sequi voluptatum neque culpa iusto reprehenderit odit. Modi delectus consequuntur, laboriosam, aut suscipit dolores, nemo ipsam eos tempora perferendis deserunt! Cupiditate recusandae molestiae, laboriosam voluptatem, dolorem odio ipsa suscipit saepe quas atque corrupti, labore eaque ut asperiores ab esse repellat eius nemo nihil cum ea? Earum aliquam harum laudantium corrupti praesentium omnis veritatis, dicta aperiam placeat, provident necessitatibus ipsa mollitia totam accusantium rerum eveniet minus eius voluptatum eaque quae vel quam! Error distinctio a veniam omnis id explicabo, ipsa quam? Aliquid cumque perspiciatis labore, ut voluptatibus doloremque optio assumenda consequatur saepe, deleniti temporibus minima voluptatem totam. Nam reprehenderit, magni odio officia cupiditate necessitatibus doloribus! Hic excepturi consequatur at repudiandae fugiat omnis placeat in nihil, accusantium harum sit itaque obcaecati dolores, atque quidem vel recusandae, nostrum numquam aperiam. Nulla vitae quisquam ipsum. Dolorum vel cupiditate perspiciatis voluptate molestias deserunt fugit eius quasi quis nobis saepe sunt odio, unde quibusdam similique labore omnis illo obcaecati vitae in itaque repudiandae nesciunt magni! Ea voluptate quod ad eveniet odit ab porro saepe ex quo!</p>    </div>
+</body>
+</html>
